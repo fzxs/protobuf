@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+//类似于c++中的namespace
+package commun;
+
+//message类首字母需要大写
+message Say{
+	//字段规则移除了"required"，并把"optional"改名为"singular"；
+    //singular修饰表示该字段可以有0个或1个值（不超过1个），即可写也可以不写 
+    int32 code = 1;
+	string data = 2;
+	//定义一个数组，数组元素是string类型 repeated关键字是用来定义一个数组的
+	repeated string name = 3;
+	//定义map
+	map<int32, string> projects = 4;
+	//定义字符数组，用来存文件数据
+	bytes audio = 5;
+	//定义一个变量，来存储文件的长度
+	 int32 filesize = 6;
+}
